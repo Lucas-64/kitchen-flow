@@ -1,5 +1,7 @@
 # Kitchen Flow
 
+[![CI](https://github.com/Lucas-64/kitchen-flow/actions/workflows/ci.yml/badge.svg)](https://github.com/Lucas-64/kitchen-flow/actions/workflows/ci.yml)
+
 MVP de orquestração de produção para cozinhas de restaurante: organiza quando cada item deve ser preparado, sincronizado e servido.
 
 ## Problema
