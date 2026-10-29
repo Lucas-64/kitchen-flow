@@ -2,6 +2,7 @@ import type { Order } from "../types/order";
 import {
   calculateItemPriority,
   type ItemPriority,
+  type PriorityStatus,
 } from "./priority";
 
 export function buildProductionQueue(
@@ -27,12 +28,11 @@ function sortByPriority(
   a: ItemPriority,
   b: ItemPriority
 ): number {
-  const priority = {
+  const priority: Record<PriorityStatus, number> = {
     ATRASADO: 0,
     FAZER_AGORA: 1,
     PROXIMO: 2,
     AGUARDANDO: 3,
-    PRONTO: 4,
   };
 
   const statusDifference =

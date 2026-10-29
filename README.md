@@ -68,6 +68,5 @@ Já implementado: painel de produção, cartões de pedido, fluxo de status, rel
 
 ## Próximos passos
 
-- Corrigir os erros de tipagem que impedem o `npm run build`: os status `ATRASADO`, `FAZER_AGORA` e `PROXIMO` (em `engine/priority.ts`) e o uso de `PRODUCAO` (em `engine/productionQueue.ts`) não batem com o tipo `ProductionStatus`.
 - Modelar estações de cozinha (chapa, fogão, fria, fritadeira).
 - Controlar capacidade por estação e identificar gargalos.

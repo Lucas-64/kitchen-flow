@@ -1,8 +1,13 @@
 import type {
   Order,
   OrderItem,
-  ProductionStatus,
 } from "../types/order";
+
+export type PriorityStatus =
+  | "ATRASADO"
+  | "FAZER_AGORA"
+  | "PROXIMO"
+  | "AGUARDANDO";
 
 export interface ItemPriority {
   orderId: string;
@@ -11,7 +16,7 @@ export interface ItemPriority {
   orderOrigin: Order["origin"];
   table?: string;
 
-  status: ProductionStatus;
+  status: PriorityStatus;
 
   prepTime: number;
   targetTime: string;
@@ -33,7 +38,7 @@ export function calculateItemPriority(
   const minutesUntilStart =
     minutesUntilTarget - item.prepTime;
 
-  let status: ProductionStatus;
+  let status: PriorityStatus;
 
   if (minutesUntilStart < 0) {
     status = "ATRASADO";
